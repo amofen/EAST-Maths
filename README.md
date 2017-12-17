@@ -22,7 +22,7 @@ Sinon il existe la possibilité de faire le render automatique, autrement dit : 
 ```
 
 ### Utilisation de MathJax
-Deux possibilité se présente pour utilsier Mathjax:
+Deux possibilités se présentent pour utilsier Mathjax:
 1. Télécharger la bibliothèque et l'utiliser en local (pas besoin d'un serveur node.js).
 2. Utiliser la version disponible à travers les serveurs CDN (Contrairement à KaTex, nous avons un seul mode de fontionnement qui est auto-render:
 ```html
