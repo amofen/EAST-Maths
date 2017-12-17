@@ -33,7 +33,7 @@ Deux possibilités se présentent pour utilsier Mathjax:
 La taille de la bibliothèque KaTex seule est `~3mo` mais si on prend en compte la taille des fichiers du serveur node.js `~57mo` donc le tout donnera une taille totale de : `~60mo`.
 
 ### Taille de MathJax 
-La taille  de MathJax est évaluer à `~117mo`. Cette taille pourra être réduite (voir: Réduction MathJax).
+La taille  de MathJax est évaluer à `~177mo`. Cette taille pourra être réduite (voir: Réduction MathJax).
 
 ### Les Entrées/Sorties de KaTex 
 Les entrées qui peuvent être utilisées, ainsi que les sorties possibles sont illustrées dans la figure suivante:
