@@ -54,6 +54,7 @@
       <MENU_INSERTION nom="ESP" type_noeud="element"/>
       <MENU_INSERTION nom="BR" type_noeud="element"/>
       <MENU_INSERTION nom="EQUATION" raccourci="E" type_noeud="element"/>
+	  <MENU_INSERTION nom="MATH" raccourci="M" type_noeud="element"/>
     </MENU>
   </MENUS>
   
@@ -195,6 +196,9 @@
       <PARAMETRE nom="texteAtt" valeur="texte"/>
       <PARAMETRE nom="srcAtt" valeur="image"/>
     </AFFICHAGE_ELEMENT>
+	<AFFICHAGE_ELEMENT element="MATH" type="string">
+		<PARAMETRE nom="entree" valeur="texte"/>
+	</AFFICHAGE_ELEMENT>
  
 <AFFICHAGE_ELEMENT element="COMMENTAIRE" type="string"/>
 </AFFICHAGE_NOEUDS>
@@ -671,6 +675,12 @@
         <TITRE>texte</TITRE>
       </STRINGS_ATTRIBUT>
     </STRINGS_ELEMENT>
+	<STRINGS_ELEMENT element="MATH">
+      <TITRE>Mathématiques</TITRE>
+      <STRINGS_ATTRIBUT attribut="entree">
+        <TITRE>Type d'entrée</TITRE>
+      </STRINGS_ATTRIBUT>
+    </STRINGS_ELEMENT>
     <STRINGS_ELEMENT element="COMMENTAIRE">
       <TITRE>Commentaire</TITRE>
     </STRINGS_ELEMENT>
@@ -1119,6 +1129,12 @@
       <TITRE>Equation</TITRE>
       <STRINGS_ATTRIBUT attribut="texte">
         <TITRE>text</TITRE>
+      </STRINGS_ATTRIBUT>
+    </STRINGS_ELEMENT>
+	<STRINGS_ELEMENT element="MATH">
+      <TITRE>Mathematics</TITRE>
+      <STRINGS_ATTRIBUT attribut="bibliotheque">
+        <TITRE>Input type</TITRE>
       </STRINGS_ATTRIBUT>
     </STRINGS_ELEMENT>
     <STRINGS_ELEMENT element="COMMENTAIRE">

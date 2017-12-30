@@ -801,6 +801,7 @@ Cellule entête de tableau
     <xs:element ref="IMAGE"/>
     <xs:element ref="VIDEO"/>
     <xs:element ref="EQUATION"/>
+	<xs:element ref="MATH"/>
     <xs:element ref="EXEMPLE"/>
 
 </xs:choice>
@@ -899,6 +900,24 @@ Saut de ligne. Utiliser PARAGRAPHE de préférence pour séparer les paragraphes.
 <xs:attribute name="texte" type="xs:string" use="required"/>
 <xs:attribute name="image" type="xs:anyURI" use="required"/>
 </xs:complexType>
+</xs:element>
+
+<xs:simpleType name="MathJaxEntree">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="ASM"/>
+		<xs:enumeration value="MML"/>
+		<xs:enumeration value="TEX"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:element name="MATH">
+ <xs:complexType>
+    <xs:simpleContent>
+      <xs:restriction base="xs:string">
+			<xs:attribute name="entree" type="MathJaxEntree" default="ASM" use="required"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
 </xs:element>
 
 <xs:element name="IMAGE">

@@ -354,7 +354,12 @@
 		<script type="text/javascript" src="config_EAST/Highlight/highlight.pack.js"><xsl:text> </xsl:text></script>
 		<script type="text/javascript" src="config_EAST/hammer.min.js"><xsl:text> </xsl:text></script>
 		<script type="text/javascript"> hljs.initHighlightingOnLoad(); </script>
-	
+		<!--Importation des scripts de MathJax-->
+		<xsl:choose>
+			<xsl:when test=".//MATH">
+				<script src='config_EAST/mathjax/MathJax.js?config=TeX-MML-AM_CHTML-full'><xsl:text> </xsl:text></script>
+			</xsl:when>
+		</xsl:choose>
 		 	    
         </head>
 
@@ -3230,6 +3235,21 @@ div#erreur {
         <img alt="{@texte}" class="equation" src="{@image}"/>
     </xsl:template>
     
+	<xsl:template match="MATH[@entree='ASM']">
+        <span>`<xsl:apply-templates/>`</span>
+    </xsl:template>
+	
+	<xsl:template match="MATH[@entree='MML']/text()">
+		<span>
+			<xsl:value-of select="." disable-output-escaping="yes"/>
+		</span>
+	</xsl:template>
+
+	
+	<xsl:template match="MATH[@entree='TEX']">
+        <span>$$<xsl:apply-templates/>$$</span>
+    </xsl:template>
+	
     <xsl:template match="ENVIMAGE">
 	
 	<xsl:variable name="div_envimage">
