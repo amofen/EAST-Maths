@@ -127,12 +127,20 @@ MathJax/jax/output/SVG/fonts
 ```
  La taille des éléments éliminé est :
 ```diff
-- 10 mo
+- 14 mo
 ```
 Donc la taille finale de la bibliothèque est :
 ```diff
-+ 14 mo
++ 10 mo
 ```
 ### Phase 4 : Limiter les choix 
-On peut aller plus loin dans le processus de réduction pour obtenir des taille plus réduite en limitant aux utilisateur la possiblité de choisir plusieurs entrées/sorties. Dans le tableau qui suit les différents combinaions d'entrées/sorties ainsi que la taille de la bibliothèque obtenu:
+On peut aller plus loin dans le processus de réduction pour obtenir des taille plus réduites en limitant aux utilisateur la possiblité de choisir plusieurs entrées/sorties. Dans le tableau qui suit les différents combinaions d'entrées/sorties ainsi que la taille de la bibliothèque obtenu (nous avons gardé que les combinaison qui permettent une réduction considérable de taille):  
+Entrées | Sorties | Taille obtenue 
+:--------------------------: | :--------------------------: | ------------------------: 
+MML;ASCII-MATH;Tex | HTML/CSS | 7 mo 
+MML;ASCII-MATH;Tex | SVG | 8 mo 
+ASCII-MATH | HTML/CSS | 6 mo 
+ASCII-MATH | SVG | 7 mo 
 
+### Conclure l'étape de réduction
+D'après ce que nous avons vu dans la partie précédente, nous avons décider de ne pas pénaliser l'utilisateur en le privant d'utiliser plusieurs entrées et sortie pour gagner ```~3mo``` . Pour cela nous avons décider de garder la bibliothèque avec toute les entrées et les sorties avec une taille de ```10mo```. De plus, vue que EAST sera par la suite comprésé, la taille de la bibliothèque après compression est ```4mo```.  
