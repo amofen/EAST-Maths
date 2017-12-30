@@ -35,9 +35,6 @@ La taille de la bibliothèque KaTex seule est `~3mo` mais si on prend en compte 
 ### Taille de MathJax 
 La taille  de MathJax est évaluer à `~177mo`. Cette taille pourra être réduite (voir: Réduction MathJax).
 
-### Les Entrées/Sorties de KaTex 
+### Les Entrées/Sorties de KaTex et de MathJax
 Les entrées qui peuvent être utilisées, ainsi que les sorties possibles sont illustrées dans la figure suivante:
-
-### Les Entrées/Sorties de Mathjax
-Les entrées et les sorties de la bibliothèque Mathjax sont illustrées dans la figure suivante:
-
+![alt text](doc-images/ES.jpg "Entrées et sorties de Katex et MathJax")
