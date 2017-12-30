@@ -135,6 +135,7 @@ Donc la taille finale de la bibliothèque est :
 ```
 ### Phase 4 : Limiter les choix 
 On peut aller plus loin dans le processus de réduction pour obtenir des taille plus réduites en limitant aux utilisateur la possiblité de choisir plusieurs entrées/sorties. Dans le tableau qui suit les différents combinaions d'entrées/sorties ainsi que la taille de la bibliothèque obtenu (nous avons gardé que les combinaison qui permettent une réduction considérable de taille):  
+
 Entrées | Sorties | Taille obtenue 
 :--------------------------: | :--------------------------: | ------------------------: 
 MML;ASCII-MATH;Tex | HTML/CSS | 7 mo 
