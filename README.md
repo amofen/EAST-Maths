@@ -37,7 +37,7 @@ La taille  de MathJax est évaluer à `~177mo`. Cette taille pourra être rédui
 
 ### Les Entrées/Sorties de KaTex et de MathJax
 Les entrées qui peuvent être utilisées, ainsi que les sorties possibles sont illustrées dans la figure suivante:
-![alt text](doc-images/ES.jpg "Entrées et sorties de Katex et MathJax")
+![alt text](doc-images/ES.png "Entrées et sorties de Katex et MathJax")
 
 ## Partie 2 : Intégration d'une bibliothèque dans EAST
 Dans cette partie nous parlerons des différents choix que nous avons fais pour intégrer les mathématiques dans EAST.
