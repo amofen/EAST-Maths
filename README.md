@@ -146,3 +146,72 @@ ASCII-MATH | SVG | 7 mo
 Pour pouvoir réduire les prochaines versions de la bibliohtèque MathJax, il est possible d'utiliser le script batch "clean.bat". Son utilisation est très simple il suffit de le mêttre au niveau du répertoire principale de la bibliothèque MathJax et de l'executer.
 ### Conclure l'étape de réduction
 D'après ce que nous avons vu dans la partie précédente, nous avons décider de ne pas pénaliser l'utilisateur en le privant d'utiliser plusieurs entrées et sortie pour gagner ```~3mo``` . Pour cela nous avons décider de garder la bibliothèque avec toute les entrées et les sorties avec une taille de ```10mo```. De plus, vue que EAST sera par la suite comprésé, la taille de la bibliothèque après compression est ```4mo```.  
+
+## Modifications effectuées sur les fichiers de EAST
+### Déclaration d'un nouveau élément xml "MATH"  dans EAST.xsd
+La déclaration du nouveau élément dans le fichier EAST.xsd est comme suite :
+```xml
+<xs:element name="MATH">
+ <xs:complexType>
+    <xs:simpleContent>
+      <xs:restriction base="xs:string">
+			<xs:attribute name="entree" type="MathJaxEntree" default="ASM" use="required"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:element>
+```
+L'élément MATH est aussi référencé dans le bloc "xs:choice" dans le même fichier :
+```xml
+<xs:choice>
+    ...
+	<xs:element ref="MATH"/>
+    ...
+</xs:choice>
+```
+Ce nouveau élément a comme seul attribut "entree" qui représente le type de l'entrée mathématiques qui sera introduite dans la balise MATH : Ascii-Math MathMl ou TeX. Cette entrée est déclarée dans le fichier "EAST.xsd" comme suite:
+```xml
+<xs:simpleType name="MathJaxEntree">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="ASM"/>
+		<xs:enumeration value="MML"/>
+		<xs:enumeration value="TEX"/>
+	</xs:restriction>
+</xs:simpleType>
+```
+## Ajout des transformations dans EAST.xsl
+L'importation de la bibliothèque MathJax avec les balises "Script" comme suite : 
+```xml
+<xsl:template match="EAST">
+    <html>
+	    <head>
+            ...
+            <xsl:choose>
+                <xsl:when test=".//MATH">
+                    <script src='config_EAST/mathjax/MathJax.js?config=TeX-MML-AM_CHTML-full'><xsl:text> </xsl:text></script>
+                </xsl:when>
+            </xsl:choose>
+            ...
+        </head>
+        ...
+    </html>
+</xsl:template>
+    
+```
+Ajout des transformations selon la nature de l'entrée mathématiques 
+```xml
+	<xsl:template match="MATH[@entree='ASM']">
+        <span>`<xsl:apply-templates/>`</span>
+    </xsl:template>
+	<xsl:template match="MATH[@entree='MML']/text()">
+		<span>
+			<xsl:value-of select="." disable-output-escaping="yes"/>
+		</span>
+	</xsl:template>
+	<xsl:template match="MATH[@entree='TEX']">
+        <span>$$<xsl:apply-templates/>$$</span>
+    </xsl:template>
+```
+
+
+
