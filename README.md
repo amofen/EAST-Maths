@@ -142,6 +142,7 @@ MML;ASCII-MATH;Tex | HTML/CSS | 7 mo
 MML;ASCII-MATH;Tex | SVG | 8 mo 
 ASCII-MATH | HTML/CSS | 6 mo 
 ASCII-MATH | SVG | 7 mo 
-
+### Automatisation du processus de réduction: 
+Pour pouvoir réduire les prochaines versions de la bibliohtèque MathJax, il est possible d'utiliser le script batch "clean.bat". Son utilisation est très simple il suffit de le mêttre au niveau du répertoire principale de la bibliothèque MathJax et de l'executer.
 ### Conclure l'étape de réduction
 D'après ce que nous avons vu dans la partie précédente, nous avons décider de ne pas pénaliser l'utilisateur en le privant d'utiliser plusieurs entrées et sortie pour gagner ```~3mo``` . Pour cela nous avons décider de garder la bibliothèque avec toute les entrées et les sorties avec une taille de ```10mo```. De plus, vue que EAST sera par la suite comprésé, la taille de la bibliothèque après compression est ```4mo```.  
