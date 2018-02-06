@@ -198,7 +198,7 @@ L'importation de la bibliothèque MathJax avec les balises "Script" comme suite 
 </xsl:template>
     
 ```
-Ajout des transformations selon la nature de l'entrée mathématiques 
+Ajout des transformations selon la nature de l'entrée mathématiques :
 ```xml
 	<xsl:template match="MATH[@entree='ASM']">
         <span>`<xsl:apply-templates/>`</span>
