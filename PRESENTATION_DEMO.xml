@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="ISO-8859-1"?><EAST transition="crossfade">
+<LOGO_GAUCHE fichier="Logo_UEVE_2011.png" hauteur_SVG="75" largeur_SVG="75"/><PAGE_TITRE>
+<TITRE>Introduction des mathématiques dans EAST</TITRE>
+<SOUS_TITRE>Réalisé par : AOUFFEN M.A. - BENHACINE H. - DERRADJI C.</SOUS_TITRE>
+<AUTEUR>Encadré par: Prof. COURTAUD D.</AUTEUR>
+<DATE_EXPOSE TYPE="2017/2018">
+2017/2018
+</DATE_EXPOSE>
+</PAGE_TITRE>
+<PARTIE>
+<TITRE>Contexte et Objectifs</TITRE>
+<SECTION>
+<TITRE>Contexte</TITRE>
+<LISTE couleur_puce="blue" mode="pliage" type="circle">
+<EL>EAST : EAsy Slides Toolkit , est un logiciel libre qui permet de créer des présentations sous format<EMPHASE> HTML</EMPHASE> .</EL>
+<EL>Les présentations doivent être formatées en XML selon une syntaxe (Possibilité d'utiliser des éditeur XML). </EL>
+<EL>EAST est très apprécié pour sa simplicité, l'efficacité de ses résultats et sa liberté d'utilisation. </EL>
+<EL>Il est également utilisé par nombreux scientifiques. </EL>
+</LISTE>
+<PARAGRAPHE>
+<TITRE>Problématique</TITRE>
+Malgré les fonctionnalités offertes par EAST pour faire des présentations HTML de qualité, ce logiciel présente des lacunes en terme d'affichage des formules mathématiques.
+Ceci est remarqué par l'ensemble de la communauté de EAST et notament par par les scientifiques qu'ils l'utilisent. Donc est ce qu'il y a un moyen 
+pour pouvoir intégrer l'affichage de mathématique dans EAST ? comment ? 
+</PARAGRAPHE>
+</SECTION>
+<SECTION>
+<TITRE>Objectifs</TITRE>
+<LISTE couleur_puce="blue" type="circle">
+<EL>Etudier la faisabilité d'introduire un moyen pour l'affichage des maths dans les présentations de EAST</EL>
+<EL>Choisir les bibliothèques les plus adaptées et essayer de les intégrer avec le logiciel EAST.</EL>
+<EL>Maintenir la facilité et l'intuitivité d'utilisation de EAST après avoir intégré les bibliothqèues.</EL>
+</LISTE>
+
+</SECTION>
+</PARTIE>
+<PARTIE>
+<TITRE>Solution et Travail réalisé</TITRE>
+<SECTION>
+<TITRE>Les deux solutions envisagées</TITRE>
+<LISTE couleur_puce="blue" type="circle">
+<TITRE>Les bibliothèques les plus adaptées sont :</TITRE>
+<EL>MathJax </EL>
+<EL>KaTex </EL>
+</LISTE>
+<PARAGRAPHE>
+<IMAGE fichier="og_logo.png" largeur="50"/>
+</PARAGRAPHE>
+</SECTION>
+<SECTION>
+<TITRE>Présentation de KaTex</TITRE>
+<PARAGRAPHE>
+Katex est une bibliothèque rapide, facile à utiliser développée avec JavaScript. Elle permet de faire le rendu mathématique TeX sur le web.
+<BR/><BR/>
+</PARAGRAPHE>
+
+<LISTE couleur_puce="blue" type="disc">
+<EL>Open-Source : libre à utiliser sous la licence (MIT license).</EL>
+<EL>Rapidité : Le rendu des mathématiques est fait d'une manière synchrone sans avoir besoin de rafraichir la page.</EL>
+<EL>Qualité d'impression : Elle est basée sur le TeX connu pour sa qualité d'affichage.</EL>
+<EL>Rendu coté serveur: Elle peut utiliser Node.JS pour faire le rendu coté serveur et envoyer le résultat au navigateur sous format HTML.</EL>
+<EL>Compatibilité avec les navigateurs: KaTex est compatilble avec la majorité des navigateurs web récents	notamment Chrome,Firefox,Opera,Safari,IE et Edge</EL>
+</LISTE>
+</SECTION>
+<SECTION>
+<TITRE>Utilisation de KaTex</TITRE>
+<PARAGRAPHE>
+Pour utiliser KaTex nous avons deux possibilités :
+</PARAGRAPHE>
+<LISTE type="1">
+<EL>Télécharger la bibliothèque et la déployer sur un serveur Node.JS.</EL>
+<EL>Utiliser la version disponible à travers les serveurs CDN.</EL>
+</LISTE>
+<PARAGRAPHE>
+<CODE_HIGH>&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0-alpha2/katex.min.css" integrity="sha384-exe4Ak6B0EoJI0ogGxjJ8rn+RN3ftPnEQrGwX59KTCl5ybGzvHGKjhPKk/KC3abb" crossorigin="anonymous"&gt;
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0-alpha2/katex.min.js" integrity="sha384-OMvkZ24ANLwviZR2lVq8ujbE/bUO8IR1FdBrKLQBI14Gq5Xp/lksIccGkmKL8m+h" crossorigin="anonymous"&gt;&lt;/script&gt;</CODE_HIGH>
+Ensuite il suffit d'appeler<EMPHASE> katex.render</EMPHASE> avec la formule mathématique en paramètre:
+<CODE_HIGH>katex.render("c = \\pm\\sqrt{a^2 + b^2}", element);</CODE_HIGH>
+Sinon il est possible de faire le rendu automatique en incluant le script <EMPHASE>KaTex autorender</EMPHASE>:
+<CODE_HIGH>&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0-alpha2/contrib/auto-render.min.js" integrity="sha384-cXpztMJlr2xFXyDSIfRWYSMVCXZ9HeGXvzyKTYrn03rsMAlOtIQVzjty5ULbaP8L" crossorigin="anonymous"&gt;&lt;/script&gt;</CODE_HIGH>
+</PARAGRAPHE>
+</SECTION>
+<SECTION>
+<TITRE>Présentation de MathJax</TITRE>
+<PARAGRAPHE>
+C'est un moteur libre de rendu de formules mathématiques développé avec javascript. C'est une bibliothèque qui offre plusieurs fonctionnalités avec un affichage agréable à voir.
+</PARAGRAPHE>
+<LISTE couleur_puce="blue" type="circle">
+<EL>Open-Source: Libre à utiliser sous la licence (Apache License)</EL>
+<EL>Typography de haute qualité : MathJax utilise SVG, CSS avec WebFonts au lieu de bitmaps, ce qui est excellent pour le zoom.</EL>
+<EL>Des entrées/sorties modulaires: MathJax donne la possibilité de choisir et de configurer les entrées/sorties selon le besoin.</EL>
+<EL>Accessibilité : Offre plusieurs fonctionnalités qui facilitent l'utilisation à toutes les catégories de personnes Zoom, Localisation .</EL>
+<EL>Compatibilité avec les navigateurs: KaTex est compatilble avec la majorité des navigateurs web récents	notamment Chrome,Firefox,Opera,Safari,IE et Edge</EL>
+</LISTE>
+</SECTION>
+<SECTION>
+<TITRE>Utilisation de MathJax</TITRE>
+<PARAGRAPHE>
+Deux possibilités se présentent pour utilser Mathjax:.
+</PARAGRAPHE>
+<LISTE type="1">
+<EL>Télécharger la bibliothèque et l'utiliser en local (pas besoin d'un serveur node.js).</EL>
+<EL>Utiliser la version disponible à travers les serveurs CDN .</EL>
+</LISTE>
+<PARAGRAPHE>
+<CODE_HIGH>&lt;script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'&gt;&lt;/script&gt;</CODE_HIGH>
+</PARAGRAPHE>
+</SECTION>
+
+
+<SECTION>
+<TITRE>Choix de la bibliothèque : Entrées/Sorties</TITRE>
+<PARAGRAPHE>
+Les entrées et les sorties de chaque bibliothèque sont un critère important de choix.
+</PARAGRAPHE>
+<ENVIMAGE>
+<IMAGE fichier="ES.png"/>
+</ENVIMAGE>
+</SECTION>
+
+<SECTION>
+<TITRE>Choix de la bibliothèque : Tableau Comparatif</TITRE>
+<TABLEAU>
+<LT><ET/><ET>Katex</ET><ET>MathJax</ET></LT>
+<LT><CT>Rapidité</CT><CT>5/5</CT><CT>2/5</CT></LT>
+<LT><CT textcolor="#0000FF">Entrées/Sorties</CT><CT>1/5</CT><CT>5/5</CT></LT>
+<LT><CT textcolor="#0000FF">Compatibilité</CT><CT>5/5</CT><CT>5/5</CT></LT>
+<LT><CT>Fonctionnalité</CT><CT>1/5</CT><CT>4/5</CT></LT>
+<LT><CT textcolor="#0000FF">Portabilité</CT><CT>2/5</CT><CT>4/5</CT></LT>
+<LT><CT>Support</CT><CT>4/5</CT><CT>4/5</CT></LT>
+</TABLEAU>
+<PARAGRAPHE>
+Les critères jugés importants pour notre cas sont : E/S, Compatibilité et Portabilité. MathJax a le profil idéal pour être intégrée avec EAST. 
+</PARAGRAPHE>
+</SECTION>
+<SECTION>
+<TITRE>Intégration de la bibliothèque MathJax (Réduction de la bibliothèque)</TITRE>
+<PARAGRAPHE>
+Nous avons essayé de réduire la taille de MathJax afin d'obtenir une taille minimale qui s'adapte au besoin. On a commencé par une taille initiale de 177 mo et nous somme arrivés à une taille de 10 mo. (Le processus ci-dessous est automatisé grâce à un script .bat).
+</PARAGRAPHE>
+<LISTE couleur_puce="blue" type="circle">
+<EL>Phase1: Elimination de tous ce qui est non nécessaire pour le fonctionnement (fichiers de test, développement, documentation ... etc - 22 mo gagnés)</EL>
+<EL>Phase 2:Elimination des éléments qui fournissent des options supplémentaires (configurations d'E/S non utilisés - 5 mo gagnés) . </EL>
+<EL>Phase 3: Elimination des fonts suppplémentaires (garder que le format .woff et un seul font par sortie - 140 mo gagnés). </EL>
+<EL>Phase 4 : Limiter les choix en Entrées/Sorties (Optionnel).</EL>
+</LISTE>
+<TABLEAU>
+<LT><CT>Entrées</CT><CT>Sorties</CT><CT>Taille obtenue</CT></LT>
+<LT><CT>MML;ASCII-MATH;Tex</CT><CT>HTML/CSS</CT><CT>7 mo</CT></LT>
+<LT><CT>MML;ASCII-MATH;Tex</CT><CT>SVG</CT><CT>8 mo </CT></LT>
+<LT><CT>ASCII-MATH</CT><CT>HTML/CSS</CT><CT>6 mo</CT></LT>
+<LT><CT>ASCII-MATH</CT><CT>SVG	</CT><CT>7 mo</CT></LT>
+</TABLEAU>
+</SECTION>
+<SECTION>
+<TITRE>Intégration de la bibliothèque MathJax (Intégration de la bibliothèque avec EAST)</TITRE>
+<LISTE couleur_puce="blue" type="circle">
+<EL>Déclaration d'une nouvelle balise "MATH" dans le fichier EAST.xsd avec un seul attribut "entree":</EL>
+</LISTE>
+<PARAGRAPHE>
+<CODE_HIGH>&lt;xs:element name="MATH"&gt;
+&lt;xs:complexType&gt;
+&lt;xs:simpleContent&gt;
+&lt;xs:restriction base="xs:string"&gt;
+&lt;xs:attribute name="entree" type="MathJaxEntree" default="ASM" use="required"/&gt;
+&lt;/xs:restriction&gt;
+&lt;/xs:simpleContent&gt;
+&lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+</CODE_HIGH>
+</PARAGRAPHE>
+<LISTE couleur_puce="blue" type="circle">
+<EL>Déclaration du type de l'attribut "entree" (les valeurs possibles) dans le même fichier EAST.xsd :</EL>
+</LISTE>
+<PARAGRAPHE>
+<CODE_HIGH>&lt;xs:simpleType name="MathJaxEntree"&gt;
+&lt;xs:restriction base="xs:string"&gt;
+&lt;xs:enumeration value="ASM"/&gt;
+&lt;xs:enumeration value="MML"/&gt;
+&lt;xs:enumeration value="TEX"/&gt;
+&lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;</CODE_HIGH>
+</PARAGRAPHE>
+</SECTION>
+<SECTION>
+<TITRE>Intégration de la bibliothèque MathJax (Intégration de la bibliothèque avec EAST)</TITRE>
+<LISTE couleur_puce="blue" type="circle">
+<EL>L'importation conditionnelle de la bibliothèque MathJax comme suite :</EL>
+</LISTE>
+<PARAGRAPHE>
+<CODE_HIGH>&lt;xsl:template match="EAST"&gt;
+&lt;html&gt;
+&lt;head&gt;
+...
+&lt;xsl:choose&gt;
+&lt;xsl:when test=".//MATH"&gt;
+&lt;script src='config_EAST/mathjax/MathJax.js?config=TeX-MML-AM_CHTML-full'&gt;&lt;xsl:text&gt; &lt;/xsl:text&gt;&lt;/script&gt;
+&lt;/xsl:when&gt;
+&lt;/xsl:choose&gt;
+...
+&lt;/head&gt;
+...
+&lt;/html&gt;
+&lt;/xsl:template&gt;
+</CODE_HIGH>
+</PARAGRAPHE>
+<LISTE couleur_puce="blue" type="circle">
+<EL>Ajout des transformations selon la nature de l'entrée mathématique :</EL>
+</LISTE>
+<PARAGRAPHE>
+<CODE_HIGH>&lt;xsl:template match="MATH[@entree='ASM']"&gt;
+&lt;span&gt;`&lt;xsl:apply-templates/&gt;`&lt;/span&gt;
+&lt;/xsl:template&gt;
+&lt;xsl:template match="MATH[@entree='MML']/text()"&gt;
+&lt;span&gt;
+&lt;xsl:value-of select="." disable-output-escaping="yes"/&gt;
+&lt;/span&gt;
+&lt;/xsl:template&gt;
+&lt;xsl:template match="MATH[@entree='TEX']"&gt;
+&lt;span&gt;$$&lt;xsl:apply-templates/&gt;$$&lt;/span&gt;
+&lt;/xsl:template&gt;</CODE_HIGH>
+</PARAGRAPHE>
+</SECTION>
+<SECTION>
+<TITRE>Exemple avec ASCII-MATH</TITRE>
+<PARAGRAPHE>
+Exemple1: Equation simple avec racine <CODE_HIGH>sqrt(x)=(34^t)/y*5</CODE_HIGH>
+<MATH entree="ASM">sqrt(x)=(34^t)/y*5</MATH><BR/><BR/>
+Exemple2: Equation avec Somme:<CODE_HIGH>sum_(i=1)^n i^3=((n(n+1))/2)^2</CODE_HIGH>
+<MATH entree="ASM">sum_(i=1)^n i^3=((n(n+1))/2)^2</MATH><BR/><BR/>
+</PARAGRAPHE>
+</SECTION>
+<SECTION>
+<TITRE>Exemple avec ASCII-MATH</TITRE>
+<PARAGRAPHE>
+Exemple3 : Système d'équations <CODE_HIGH>{(2x,+,17y,=,23),(x,-,y,=,5):}</CODE_HIGH> 
+<MATH entree="ASM">{(2x,+,17y,=,23),(x,-,y,=,5):}</MATH><BR/>
+Exemple4: Matrix <CODE_HIGH>[[a,b],[c,d]]</CODE_HIGH>
+<MATH entree="ASM">[[a,b],[c,d]]</MATH><BR/><BR/>
+</PARAGRAPHE>
+</SECTION>
+<SECTION>
+<TITRE>Exemple avec ASCII-MATH</TITRE>
+<PARAGRAPHE>
+Exemple5 : Intégrale <CODE_HIGH>int_0^1 f(x)dx</CODE_HIGH> 
+<MATH entree="ASM">int_0^1 f(x)dx</MATH><BR/>
+Exemple4: Dérivé <CODE_HIGH>f'(x) = dy/dx</CODE_HIGH>
+<MATH entree="ASM">f'(x) = dy/dx</MATH><BR/><BR/>
+</PARAGRAPHE>
+
+</SECTION>
+<SECTION>
+<TITRE>Exemple avec Tex</TITRE>
+<PARAGRAPHE>
+Exemple1 : Les limites
+<CODE_HIGH>\lim_{x\to 0}{\frac{e^x-1}{2x}}
+\overset{\left[\frac{0}{0}\right]}{\underset{\mathrm{H}}{=}}
+\lim_{x\to 0}{\frac{e^x}{2}}={\frac{1}{2}}</CODE_HIGH>
+
+<MATH entree="TEX">
+\lim_{x\to 0}{\frac{e^x-1}{2x}}
+\overset{\left[\frac{0}{0}\right]}{\underset{\mathrm{H}}{=}}
+\lim_{x\to 0}{\frac{e^x}{2}}={\frac{1}{2}}
+</MATH><BR/><BR/>
+</PARAGRAPHE>
+</SECTION>
+
+<SECTION>
+<TITRE>Exemple avec Tex</TITRE>
+<PARAGRAPHE>
+Exemple 2 : Equation avec explication <CODE_HIGH>y = a + f(\underbrace{b x}_{
+\ge 0 \text{ par supposition}}) 
+= a + f(\underbrace{b x}_{
+\mathclap{\ge 0 \text{ par supposition}}})</CODE_HIGH>
+<MATH entree="TEX">
+y = a + f(\underbrace{b x}_{
+\ge 0 \text{ by assumption}}) 
+= a + f(\underbrace{b x}_{
+{\ge 0 \text{ by assumption}}})
+</MATH><BR/><BR/>
+
+</PARAGRAPHE>
+</SECTION>
+
+<SECTION>
+<TITRE>Exemple avec Tex</TITRE>
+<PARAGRAPHE>
+Exemple 3 : Longue équation (développement) <CODE_HIGH>\begin{split}
+P(Y-X=m | Y &gt; X) &amp;= \sum_{k} P(Y-X=m, X=k | Y &gt; X) \\ &amp;= \sum_{k} P(Y-X=m | X=k, Y &gt; X) P(X=k | Y &gt; X) \\ &amp;= \sum_{k} P(Y-k=m | Y &gt; k) P(X=k | Y &gt; X).\end{split}</CODE_HIGH>
+<MATH entree="TEX">
+\begin{split}
+P(Y-X=m | Y &gt; X) &amp;= \sum_{k} P(Y-X=m, X=k | Y &gt; X) \\ &amp;= \sum_{k} P(Y-X=m | X=k, Y &gt; X) P(X=k | Y &gt; X) \\ &amp;= \sum_{k} P(Y-k=m | Y &gt; k) P(X=k | Y &gt; X).\end{split}
+</MATH><BR/><BR/>
+
+</PARAGRAPHE>
+</SECTION>
+<SECTION>
+<TITRE>Exemple avec Tex</TITRE>
+<PARAGRAPHE>
+Exemple 4 :Transformé de Fourrier (caractères grec) <CODE_HIGH>\sum\limits_{n = - \infty }^\infty {x(n)y^* (n)} = \frac{1}{{2\pi }}\int\limits_{ - \pi }^\pi {X(e^{j\omega } )Y^* (e^{j\omega } )d\omega }</CODE_HIGH>
+<MATH entree="TEX">
+\sum\limits_{n = - \infty }^\infty {x(n)y^* (n)} = \frac{1}{{2\pi }}\int\limits_{ - \pi }^\pi {X(e^{j\omega } )Y^* (e^{j\omega } )d\omega }
+</MATH><BR/><BR/>
+
+</PARAGRAPHE>
+</SECTION>
+
+<SECTION>
+<TITRE>Exemple Avec MathMl</TITRE>
+<PARAGRAPHE>
+Exemple : Implication logique
+<CODE_HIGH>&lt;math xmlns="http://www.w3.org/1998/Math/MathML" display="block"&gt;&lt;mrow&gt;
+&lt;mi&gt;x&lt;/mi&gt;
+&lt;munder&gt;
+&lt;mo&gt;&amp;#8594;&lt;/mo&gt;
+&lt;mtext&gt;maps to&lt;/mtext&gt;
+&lt;/munder&gt;
+&lt;mi&gt;y&lt;/mi&gt;
+&lt;/mrow&gt;&lt;/math&gt;</CODE_HIGH>
+<MATH entree="MML">&lt;math xmlns="http://www.w3.org/1998/Math/MathML" display="block"&gt;
+&lt;mrow&gt;
+&lt;mi&gt;x&lt;/mi&gt;
+&lt;munder&gt;
+&lt;mo&gt;&amp;#8594;&lt;/mo&gt;
+&lt;mtext&gt;implique&lt;/mtext&gt;
+&lt;/munder&gt;
+&lt;mi&gt;y&lt;/mi&gt;
+&lt;/mrow&gt;&lt;/math&gt;</MATH>
+</PARAGRAPHE>
+</SECTION>
+</PARTIE>
+<PARTIE>
+<TITRE>Conclusion et Perspectives</TITRE>
+<SECTION>
+<TITRE>Conclusion</TITRE>
+<PARAGRAPHE>
+Ce projet était une expérience très enrichissante. 
+</PARAGRAPHE>
+<LISTE couleur_puce="blue" type="circle">
+<EL>Nous avons appris à utiliser un nouveau logiciel et même son fonctionnement et comment il est développé.</EL>
+<EL>Nous nous somme familiarisés avec un nouveau language (XSLT) et nous avons découvert un outil très intéressant (Jaxe) pour l'édition XML.</EL>
+<EL>Nous avons complété la théorie acquise pendant le cours DLL par une expérience pratique : (Rôle de la communauté, participation à un projet réel) </EL>
+</LISTE>
+</SECTION>
+<SECTION>
+<TITRE>Perspectives</TITRE>
+<LISTE couleur_puce="blue" type="circle">
+<EL>Bien tester le fonctionnement de la nouvelle fonctionnalité avec le reste des navigateurs web récents : Safari, IE, Edge ....</EL>
+<EL>Corriger l'ensemble de bugs qui sont apparus dans EAST après l'intégration de la bibliothèque notament le bug du Zoom au survol avec Firefox.</EL>
+<EL>Proposer de maintenir toujours la dernière version de EAST sur le GitHub pour continuer son développement.</EL>
+</LISTE>
+</SECTION>
+</PARTIE>
+<PAGE_CONCLUSION>
+<PARAGRAPHE>
+<TITRE>Merci pour votre attention.</TITRE>
+</PARAGRAPHE>
+</PAGE_CONCLUSION>
+</EAST>
