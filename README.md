@@ -134,7 +134,7 @@ Donc la taille finale de la bibliothèque est :
 + 10 mo
 ```
 ### Phase 4 : Limiter les choix 
-On peut aller plus loin dans le processus de réduction pour obtenir des tailles plus réduites en limitant aux utilisateurs la possiblité de choisir plusieurs entrées/sorties. Dans le tableau qui suit, nous présentons les différents combinaisons d'entrées/sorties ainsi que la taille de la bibliothèque obtenu (nous avons gardé que les combinaisons qui permettent une réduction considérable de taille):  
+On peut aller plus loin dans le processus de réduction pour obtenir des tailles plus réduites en limitant aux utilisateurs la possiblité de choisir plusieurs entrées/sorties. Dans le tableau qui suit, nous présentons les différents combinaisons d'entrées/sorties ainsi que la taille de la bibliothèque obtenu (nous avons gardé que les combinaisons qui permettent une réduction de taille considérable ):  
 
 Entrées | Sorties | Taille obtenue 
 :--------------------------: | :--------------------------: | ------------------------: 
@@ -145,7 +145,7 @@ ASCII-MATH | SVG | 7 mo
 ### Automatisation du processus de réduction: 
 Pour pouvoir réduire les prochaines versions de la bibliohtèque MathJax, il est possible d'utiliser le script batch "clean.bat". Son utilisation est très simple il suffit de le mêttre au niveau du répertoire principale de la bibliothèque MathJax et de l'executer.
 ### Conclure l'étape de réduction
-D'après ce que nous avons vu dans la partie précédente, nous avons décider de ne pas pénaliser l'utilisateur en le privant d'utiliser plusieurs entrées et sortie pour gagner ```~3mo``` . Pour cela nous avons décider de garder la bibliothèque avec toute les entrées et les sorties avec une taille de ```10mo```. De plus, vue que EAST sera par la suite comprésé, la taille de la bibliothèque après compression est ```4mo```.  
+D'après ce que nous avons vu dans la partie précédente, nous avons décidé de ne pas pénaliser l'utilisateur en le privant d'utiliser plusieurs entrées et sortie pour gagner ```~3mo``` . Pour cela nous avons gardé la bibliothèque avec toute les entrées et les sorties avec une taille de ```10mo```. De plus, vue que EAST sera par la suite comprésé, la taille de la bibliothèque après compression est ```4mo```.  
 
 ## Modifications effectuées sur les fichiers de EAST
 ### Déclaration d'un nouveau élément xml "MATH"  dans EAST.xsd
@@ -198,7 +198,7 @@ L'importation de la bibliothèque MathJax avec les balises "Script" comme suite 
 </xsl:template>
     
 ```
-Ajout des transformations selon la nature de l'entrée mathématiques :
+Ajout des transformations selon la nature de l'entrée mathématique :
 ```xml
 	<xsl:template match="MATH[@entree='ASM']">
         <span>`<xsl:apply-templates/>`</span>
