@@ -19,9 +19,6 @@ ren "Accessible-full.js" "Accessible-full.js.lock"
 ren "default.js" "default.js.lock"
 ren "Safe.js" "Safe.js.lock"
 ren "TeX-MML-AM_CHTML-full.js" "TeX-MML-AM_CHTML-full.js.lock"
-ren "TeX-MML-AM_HTMLorMML-full.js" "TeX-MML-AM_HTMLorMML-full.js.lock"
-ren "TeX-MML-AM_SVG.js" "TeX-MML-AM_SVG.js.lock"
-ren "TeX-MML-AM_SVG-full.js" "TeX-MML-AM_SVG-full.js.lock"
 
 del  /Q "*.js"
 
@@ -30,9 +27,6 @@ ren "Accessible-full.js.lock" "Accessible-full.js"
 ren "default.js.lock" "default.js" 
 ren "Safe.js.lock" "Safe.js" 
 ren "TeX-MML-AM_CHTML-full.js.lock" "TeX-MML-AM_CHTML-full.js"
-ren "TeX-MML-AM_HTMLorMML-full.js.lock" "TeX-MML-AM_HTMLorMML-full.js"
-ren "TeX-MML-AM_SVG.js.lock" "TeX-MML-AM_SVG.js"
-ren "TeX-MML-AM_SVG-full.js.lock" "TeX-MML-AM_SVG-full.js"
 
 cd "..""
 
