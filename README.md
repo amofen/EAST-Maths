@@ -1,6 +1,6 @@
 # Introduction des mathématiques dans EAST
 Projet d'introduction des mathématiques dans EAST:EAsy Slides Toolkit. Ce document représente le résumé de l'étude que nous avons mené sur deux bibliothèques d'affichage de mathématiques et de la possibilité de leur intégration dans EAST. 
-
+Pour voir une démonstration faite par EAST : [Cliquer ici](https://amofen.github.io/EAST-Maths/Demo/DemoEASTMathJax.html)
 ## Partie 1 : Les bibliothèques Katex et MathJax
 Katex et MathJax sont développées en JavaScript. Il s'agit de deux bibliothèques OpenSources disponibles sur les liens suivants : [Katex](https://github.com/Khan/KaTeX)     -       [MathJax](https://www.mathjax.org/)
 
